@@ -1,0 +1,100 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+ 	<!-- Modules -->
+	<bean id="modules" class="com.nirmalsprojects.nutrient.module.common.Modules">
+	  <constructor-arg>
+	    <list>
+		  <ref bean="cartModule"/>
+		  <ref bean="kitchenModule"/>
+		</list>
+	  </constructor-arg>	
+	</bean>
+	
+ 	<!-- Shopping Cart -->
+	<bean id="cartDataAccess" class="com.nirmalsprojects.nutrient.dataaccess.shoppingcart.ShoppingCartDataAccess" />
+	<bean id="cartModule" class="com.nirmalsprojects.nutrient.module.shoppingcart.ShoppingCartModule">
+	  <constructor-arg ref="cartDataAccess"/>
+	</bean>
+	
+	<!-- Kitchen -->
+	<bean id="kitchenDataAccess" class="com.nirmalsprojects.nutrient.dataaccess.kitchen.KitchenDataAccess" />
+	<bean id="kitchenModule" class="com.nirmalsprojects.nutrient.module.kitchen.KitchenModule">
+	  <constructor-arg ref="kitchenDataAccess"/>
+	</bean>	
+	
+	<!-- Module Listeners -->
+	<bean id="cartListeners" class="com.nirmalsprojects.nutrient.modulelisteners.ShoppingCartListener" init-method="register">
+	  <constructor-arg ref="modules"/>
+	</bean>
+	
+	<bean id="cartListener" class="com.nirmalsprojects.nutrient.modulelisteners.KitchenListener" init-method="register">
+	  <constructor-arg ref="modules"/>
+	</bean>
+	
+	<!-- Console App -->
+	
+	<bean id="commands" class="java.util.ArrayList">
+      <constructor-arg>
+        <list>
+        	<ref bean="helpCmd" />
+            <ref bean="cartCmd" />
+            <ref bean="kitchenCmd" />                
+        </list>
+      </constructor-arg>
+	</bean>
+	
+	<!-- Help Command -->
+	<bean id="helpCmd" class="com.nirmalsprojects.nutrient.app.console.commands.HelpCmd">
+      <constructor-arg>
+        <list>
+            <ref bean="cartCmd" />
+            <ref bean="kitchenCmd" />                
+        </list>
+      </constructor-arg>
+	</bean>	
+	
+	<!-- Cart Sub Commands -->
+	<bean id="cartGetCmd" class="com.nirmalsprojects.nutrient.app.console.commands.cart.CartGetCmd">
+	  <constructor-arg ref="cartModule"/>
+	</bean>
+	<bean id="cartAddCmd" class="com.nirmalsprojects.nutrient.app.console.commands.cart.CartAddCmd">
+	  <constructor-arg ref="cartModule"/>
+	</bean>
+	<bean id="cartRemoveCmd" class="com.nirmalsprojects.nutrient.app.console.commands.cart.CartRemoveCmd">
+	  <constructor-arg ref="cartModule"/>
+	</bean>
+	<bean id="cartCmd" class="com.nirmalsprojects.nutrient.app.console.commands.cart.CartCmd">
+	  <constructor-arg>
+	    <list>
+		  <ref bean="cartGetCmd"/>
+		  <ref bean="cartAddCmd"/>
+		  <ref bean="cartRemoveCmd"/>
+		</list>
+	  </constructor-arg>
+	</bean>
+	
+	<!-- Kitchen Sub Commands -->
+	<bean id="kitchenGetCmd" class="com.nirmalsprojects.nutrient.app.console.commands.kitchen.KitchenGetCmd">
+	  <constructor-arg ref="kitchenModule"/>
+	</bean>
+	<bean id="kitchenAddCmd" class="com.nirmalsprojects.nutrient.app.console.commands.kitchen.KitchenAddCmd">
+	  <constructor-arg ref="kitchenModule"/>
+	</bean>
+	<bean id="kitchenRemoveCmd" class="com.nirmalsprojects.nutrient.app.console.commands.kitchen.KitchenRemoveCmd">
+	  <constructor-arg ref="kitchenModule"/>
+	</bean>
+	<bean id="kitchenCmd" class="com.nirmalsprojects.nutrient.app.console.commands.kitchen.KitchenCmd">
+	  <constructor-arg>
+	    <list>
+		  <ref bean="kitchenGetCmd"/>
+		  <ref bean="kitchenAddCmd"/>
+		  <ref bean="kitchenRemoveCmd"/>
+		</list>
+	  </constructor-arg>
+	</bean>
+		
+</beans>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_MkTykP_PEeSRB6fI2MqAKA" name="Modules">
+  <ownedComment xmi:id="_MkE9gP_ZEeSRB6fI2MqAKA">
+    <body></body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWdS8P_PEeSRB6fI2MqAKA" clientDependency="_VBk1oP_WEeSRB6fI2MqAKA" name="ShoppingCartModule">
+    <ownedOperation xmi:id="_PkkO0P_gEeSRB6fI2MqAKA" name="ShoppingCartModule">
+      <ownedParameter xmi:id="_YHVhIP_gEeSRB6fI2MqAKA" type="_xACSUP_bEeSRB6fI2MqAKA" isUnique="false"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_f85-8P_PEeSRB6fI2MqAKA" name="IModule">
+    <ownedOperation xmi:id="_WOvTsP_TEeSRB6fI2MqAKA" name="initialize">
+      <ownedParameter xmi:id="_wiEWMP_WEeSRB6fI2MqAKA" name="Modules" type="_KDVJ8P_XEeSRB6fI2MqAKA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bhhfIP_XEeSRB6fI2MqAKA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bhj7YP_XEeSRB6fI2MqAKA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_xi8BgP_PEeSRB6fI2MqAKA" name="Interaction1"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_QbTK4P_SEeSRB6fI2MqAKA" name="Class1"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_dtDU0P_SEeSRB6fI2MqAKA" name="Interaction2"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_iAuwgP_SEeSRB6fI2MqAKA" name="Package1"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_mFcjIP_SEeSRB6fI2MqAKA" name="Class2"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5SvMgP_UEeSRB6fI2MqAKA" clientDependency="_W8o0IP_WEeSRB6fI2MqAKA" name="ProductModule">
+    <ownedOperation xmi:id="_68xO8P_gEeSRB6fI2MqAKA" name="ProductModule">
+      <ownedParameter xmi:id="_DFN8wP_hEeSRB6fI2MqAKA" type="_H3DGUP_cEeSRB6fI2MqAKA" isUnique="false"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7X3tAP_UEeSRB6fI2MqAKA" clientDependency="_GVbxUP_WEeSRB6fI2MqAKA" name="UserModule">
+    <ownedOperation xmi:id="_ipcVUP_dEeSRB6fI2MqAKA" name="UserModule">
+      <ownedParameter xmi:id="_qYlyUP_dEeSRB6fI2MqAKA" type="_GAHZ4P_cEeSRB6fI2MqAKA" isUnique="false"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_GVbxUP_WEeSRB6fI2MqAKA" name="Realization1" client="_7X3tAP_UEeSRB6fI2MqAKA" supplier="_f85-8P_PEeSRB6fI2MqAKA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_VBk1oP_WEeSRB6fI2MqAKA" name="Realization2" client="_RWdS8P_PEeSRB6fI2MqAKA" supplier="_f85-8P_PEeSRB6fI2MqAKA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_WCVvEP_WEeSRB6fI2MqAKA" name="Realization3" client="_gUQLIP_TEeSRB6fI2MqAKA" supplier="_f85-8P_PEeSRB6fI2MqAKA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_W8o0IP_WEeSRB6fI2MqAKA" name="" client="_5SvMgP_UEeSRB6fI2MqAKA" supplier="_f85-8P_PEeSRB6fI2MqAKA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KDVJ8P_XEeSRB6fI2MqAKA" name="Modules">
+    <ownedAttribute xmi:id="_YRTPEP_YEeSRB6fI2MqAKA" name="modules" visibility="public" isUnique="false">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZJ310P_YEeSRB6fI2MqAKA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZJ6SEP_YEeSRB6fI2MqAKA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZJ_KkP_YEeSRB6fI2MqAKA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_UuAHcP_YEeSRB6fI2MqAKA" name="DataType1"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_PoHWQP_ZEeSRB6fI2MqAKA" name="IDataAccess">
+    <ownedOperation xmi:id="_e1k-8P_ZEeSRB6fI2MqAKA" name="connect"/>
+    <ownedOperation xmi:id="_gMgVoP_ZEeSRB6fI2MqAKA" name="disconnect"/>
+    <ownedOperation xmi:id="_hbTEAP_ZEeSRB6fI2MqAKA" name="initialize"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_xACSUP_bEeSRB6fI2MqAKA" name="IShoppingCartAccess"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_EFAYEP_cEeSRB6fI2MqAKA" name="IKitchenAccess"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_GAHZ4P_cEeSRB6fI2MqAKA" name="IUserAccess"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_H3DGUP_cEeSRB6fI2MqAKA" name="IProductAccess"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_gUQLIP_TEeSRB6fI2MqAKA" clientDependency="_WCVvEP_WEeSRB6fI2MqAKA" name="KitchenModule">
+    <ownedOperation xmi:id="_nkBRkP_gEeSRB6fI2MqAKA" name="KitchenModule">
+      <ownedParameter xmi:id="_sfyA8P_gEeSRB6fI2MqAKA" type="_EFAYEP_cEeSRB6fI2MqAKA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0ivKwP_gEeSRB6fI2MqAKA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ivKwf_gEeSRB6fI2MqAKA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_tyhlwP_hEeSRB6fI2MqAKA" name="IService">
+    <ownedOperation xmi:id="_3K-i4P_hEeSRB6fI2MqAKA" name="start"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InformationItem" xmi:id="_-_MtIP_hEeSRB6fI2MqAKA" name="InformationItem1"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="__l8kEP_hEeSRB6fI2MqAKA" clientDependency="_UiOwwP_iEeSRB6fI2MqAKA" name="WebService">
+    <generalization xmi:id="_RHfIMP_iEeSRB6fI2MqAKA" general="_tyhlwP_hEeSRB6fI2MqAKA"/>
+    <ownedOperation xmi:id="_jOnFoP_iEeSRB6fI2MqAKA" name="WebService">
+      <ownedParameter xmi:id="_9B6EkP_iEeSRB6fI2MqAKA" type="_KDVJ8P_XEeSRB6fI2MqAKA" isUnique="false"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DB3RUP_iEeSRB6fI2MqAKA" clientDependency="_VzinoP_iEeSRB6fI2MqAKA" name="CommandPrompt">
+    <ownedOperation xmi:id="_k9jTsP_iEeSRB6fI2MqAKA" name="CommandPrompt">
+      <ownedParameter xmi:id="_3dG_QP_iEeSRB6fI2MqAKA" type="_KDVJ8P_XEeSRB6fI2MqAKA" isUnique="false"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_UiOwwP_iEeSRB6fI2MqAKA" name="implements" client="__l8kEP_hEeSRB6fI2MqAKA" supplier="_tyhlwP_hEeSRB6fI2MqAKA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_VzinoP_iEeSRB6fI2MqAKA" name="implements" client="_DB3RUP_iEeSRB6fI2MqAKA" supplier="_tyhlwP_hEeSRB6fI2MqAKA"/>
+</uml:Model>
