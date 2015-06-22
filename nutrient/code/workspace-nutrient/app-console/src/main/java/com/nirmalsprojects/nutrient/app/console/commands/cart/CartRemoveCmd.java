@@ -6,6 +6,12 @@ import java.util.List;
 import com.nirmalsprojects.nutrient.app.console.commands.SubCommand;
 import com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule;
 
+/**
+ * Sub command to remove items from a shopping cart
+ * 
+ * @author Nirmal
+ *
+ */
 public class CartRemoveCmd extends SubCommand {
 	
 	private static final String CART_DEL_CMD = "remove";
@@ -20,18 +26,30 @@ public class CartRemoveCmd extends SubCommand {
 		this.module = module;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#getName()
+	 */
 	public String getName() {
 		return CART_DEL_CMD;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#getDescription()
+	 */
 	public String getDescription() {
 		return DESCRIPTION;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ISubCommand#getParameters()
+	 */
 	public List<String> getParameters() {
 		return Arrays.asList(params);
 	}
 
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#executeCommand(java.util.List)
+	 */
 	public boolean executeCommand(List<String> userInput) {
 		if (!isCommandParsable(userInput)) {
 			return false;
