@@ -6,6 +6,12 @@ import java.util.List;
 import com.nirmalsprojects.nutrient.app.console.commands.SubCommand;
 import com.nirmalsprojects.nutrient.module.kitchen.IKitchenModule;
 
+/**
+ * Sub command to remove items from the kitchen
+ * 
+ * @author Nirmal
+ *
+ */
 public class KitchenRemoveCmd extends SubCommand {
 	
 	private static final String DEL_CMD = "remove";
@@ -20,18 +26,30 @@ public class KitchenRemoveCmd extends SubCommand {
 		this.module = module;
 	}
 
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#getName()
+	 */
 	public String getName() {
 		return DEL_CMD;
 	}
 
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#getDescription()
+	 */
 	public String getDescription() {
 		return DESCRIPTION;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ISubCommand#getParameters()
+	 */
 	public List<String> getParameters() {
 		return Arrays.asList(params);
 	}
 
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#executeCommand(java.util.List)
+	 */
 	public boolean executeCommand(List<String> userInput) {
 		if (!isCommandParsable(userInput)) {
 			return false;

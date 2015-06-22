@@ -5,7 +5,12 @@ import java.util.ArrayList;
 import com.nirmalsprojects.nutrient.app.console.commands.Command;
 import com.nirmalsprojects.nutrient.app.console.commands.ISubCommand;
 
-
+/**
+ * Shopping cart command
+ * 
+ * @author Nirmal
+ *
+ */
 public class CartCmd extends Command {
 	
 	public static final String CMD_NAME = "-cart";
@@ -16,10 +21,16 @@ public class CartCmd extends Command {
 		this.subCommands = subCommands;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#getName()
+	 */
 	public String getName()	{
 		return CMD_NAME;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#getDescription()
+	 */
 	public String getDescription() {
 		return DESCRIPTION;
 	}
