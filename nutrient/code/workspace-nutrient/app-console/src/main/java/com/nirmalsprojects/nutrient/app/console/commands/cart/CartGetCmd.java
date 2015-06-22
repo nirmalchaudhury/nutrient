@@ -8,6 +8,12 @@ import com.nirmalsprojects.nutrient.app.console.commands.SubCommand;
 import com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule;
 import com.nirmalsprojects.nutrient.types.UserItem;
 
+/**
+ * Sub command to get items from a shopping cart
+ * 
+ * @author Nirmal
+ *
+ */
 public class CartGetCmd extends SubCommand {
 
 	private static final String CART_GET_CMD = "get";
@@ -22,18 +28,30 @@ public class CartGetCmd extends SubCommand {
 		this.module = module;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#getName()
+	 */
 	public String getName() {
 		return CART_GET_CMD;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#getDescription()
+	 */
 	public String getDescription() {
 		return DESCRIPTION;
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ISubCommand#getParameters()
+	 */
 	public List<String> getParameters() {
 		return Arrays.asList(params);
 	}
 
+	/**
+	 * @see com.nirmalsprojects.nutrient.app.console.commands.ICommand#executeCommand(java.util.List)
+	 */
 	public boolean executeCommand(List<String> userInput) {
 		if (!isCommandParsable(userInput)) {
 			return false;
@@ -49,6 +67,11 @@ public class CartGetCmd extends SubCommand {
 		return false;
 	}
 	
+	/**
+	 * Prints item from the shopping cart
+	 * 
+	 * @param userId user id of the shopping cart
+	 */
 	private void printItems(int userId) {
 		System.out.println("Shopping Cart Items:");
 		ArrayList<UserItem> items = module.getItems(userId);
