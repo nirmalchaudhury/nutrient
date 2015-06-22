@@ -1,0 +1,1 @@
+java -cp app-console-0.0.1-SNAPSHOT.jar;../lib/* com.nirmalsprojects.nutrient.app.console.ConsoleApp
