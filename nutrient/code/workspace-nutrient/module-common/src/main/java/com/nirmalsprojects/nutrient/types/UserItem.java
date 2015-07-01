@@ -1,6 +1,8 @@
 package com.nirmalsprojects.nutrient.types;
 
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 /**
  * Representation of an User item
@@ -40,10 +42,11 @@ public class UserItem {
 	
 	@Override
 	public String toString() {
-		return "userId:" + userId + "," 
-			 + "itemName:" + itemName + "," 
-			 + "quantity:" + quantity + ","
-			 + "dateAdded:" + dateAdded + ","
+		DateTimeFormatter dtf = DateTimeFormat.forPattern("MMM dd,yyyy HH:mm");
+		return "userId:" + userId + " , " 
+			 + "itemName:" + itemName + " , " 
+			 + "quantity:" + quantity + " , "
+			 + "dateAdded:" + dtf.print(dateAdded) + " , "
 			 + "isRemoved:" + isRemoved;
 	}
 

@@ -14,42 +14,6 @@ import com.nirmalsprojects.nutrient.types.UserItem;
  */
 public interface IUserItemDataAccess extends IDataAccess {
 	
-//	/**
-//	 * Get all user item entries including the entries that are marked as removed
-//	 * 
-//	 * @param userId user id of interest
-//	 * @return user entries
-//	 */
-//	ArrayList<UserItem> getEntries(int userId);
-//	
-//	/**
-//	 * Gets all the entries including the ones that are marked removed of a particular
-//	 * user id and item name
-//	 * 
-//	 * @param userId desired user id of the item
-//	 * @param itemName desired item name
-//	 * @return entries of a particular user id and item name
-//	 */
-//	ArrayList<UserItem> getItemEntries(int userId, String itemName);
-//	
-//	/**
-//	 * Gets the entry with a specific user id and and item name and is not marked removed
-//	 * 
-//	 * @param userId desired user id of the item
-//	 * @param itemName desired item name
-//	 * @return user item that is not marked as removed and is associated with the specified userId and itemName. Returns false otherwise
-//	 */
-//	UserItem getItem(int userId, String itemName);
-//	
-//	/**
-//	 * Gets the list of items with a specific user id and item name
-//	 * 
-//	 * @param userId item user id
-//	 * @param itemName item name
-//	 * @return list of non-removed items with the user id and item name
-//	 */
-//	ArrayList<UserItem> getNonRemovedItems(int userId, String itemName);
-	
 	/**
 	 * Gets a list of items that are associated with a specific user id and
 	 * added before a specific date

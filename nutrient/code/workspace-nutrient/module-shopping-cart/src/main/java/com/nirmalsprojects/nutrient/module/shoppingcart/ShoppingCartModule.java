@@ -11,29 +11,46 @@ import com.nirmalsprojects.nutrient.types.UserItem;
 
 public class ShoppingCartModule extends Module implements IShoppingCartModule {
 	
+	/**
+	 * Shopping cart module type
+	 */
 	private final static ModuleType MODULE_TYPE = ModuleType.SHOPPING_CART;
 	
+	/**
+	 * Listeners of shopping cart events
+	 */
 	private ArrayList<IShoppingCartListener> listeners;
 	
+	/**
+	 * Shopping cart item data store
+	 */
 	private IShoppingCartDataAccess shoppingCart;
 
+	/**
+	 * Constructor
+	 * 
+	 * @param shoppingCart Shopping cart data store
+	 */
 	public ShoppingCartModule(IShoppingCartDataAccess shoppingCart) {
 		this.shoppingCart = shoppingCart;
 		listeners = new ArrayList<IShoppingCartListener>();
 	}
 	
+	/**
+	 * @see com.nirmalsprojects.nutrient.module.common.IModule#getModuleType()
+	 */
 	public ModuleType getModuleType() {
 		return MODULE_TYPE;
 	}
 	
 	/**
-	 * Adds listeners to notify kitchen events
+	 * @see com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule#addListener(com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartListener)
 	 */
 	public void addListener(IShoppingCartListener listener) {
 		listeners.add(listener);
 	}
 	
-	/* (non-Javadoc)
+	/**
 	 * @see com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule#getItems(int)
 	 */
 	public ArrayList<UserItem> getItems(int userId) {
@@ -42,7 +59,7 @@ public class ShoppingCartModule extends Module implements IShoppingCartModule {
 		return shoppingCart.getItems(userId, getRemovedItems, currentTime);
 	}
 	
-	/* (non-Javadoc)
+	/**
 	 * @see com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule#isItemInShoppingCart(int, java.lang.String)
 	 */
 	public boolean isItemInShoppingCart(int userId, String itemName) {
@@ -52,14 +69,14 @@ public class ShoppingCartModule extends Module implements IShoppingCartModule {
 		return items.size() != 0;
 	}
 	
-	/* (non-Javadoc)
+	/**
 	 * @see com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule#addItem(int, java.lang.String, int)
 	 */
 	public boolean addItem(int userId, String itemName, int quantity) {
 		return addItem(userId, itemName, quantity, new DateTime());
 	}
 	
-	/* (non-Javadoc)
+	/**
 	 * @see com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule#addItem(int, java.lang.String, int, org.joda.time.DateTime)
 	 */
 	public boolean addItem(int userId, String itemName, int quantity, DateTime date) {
@@ -74,7 +91,7 @@ public class ShoppingCartModule extends Module implements IShoppingCartModule {
 		return false;
 	}
 	
-	/* (non-Javadoc)
+	/**
 	 * @see com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule#removeItem(int, java.lang.String, boolean)
 	 */
 	public boolean removeItem(int userId, String itemName, boolean isBought) {
@@ -90,12 +107,22 @@ public class ShoppingCartModule extends Module implements IShoppingCartModule {
 		return isItemRemoved;
 	}
 	
+	/**
+	 * Notifies listeners of a new item in the shopping cart
+	 * 
+	 * @param item item added to shopping cart
+	 */
 	private void notifyListenersOnNewItem(UserItem item) {
 		for (IShoppingCartListener listener : listeners) {
 			listener.onNewShoppingCartItem(item);
 		}
 	}
 	
+	/**
+	 * Notifies listeners of a bought item
+	 * 
+	 * @param item bought item
+	 */
 	private void notifyListenersOnBoughtItem(UserItem item) {
 		for (IShoppingCartListener listener : listeners) {
 			listener.onBoughtShoppingCartItem(item);

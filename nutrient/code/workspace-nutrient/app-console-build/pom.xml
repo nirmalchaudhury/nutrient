@@ -9,6 +9,7 @@
   	<module>../module-common</module>
   	<module>../module-kitchen</module>
   	<module>../module-shopping-cart</module>
+  	<module>../module-recipe</module>
   	<module>../module-listener</module>
   </modules>
 </project>
