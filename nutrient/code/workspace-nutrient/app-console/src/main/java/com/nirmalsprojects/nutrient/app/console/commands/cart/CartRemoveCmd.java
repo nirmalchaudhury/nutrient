@@ -8,20 +8,34 @@ import com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule;
 
 /**
  * Sub command to remove items from a shopping cart
- * 
- * @author Nirmal
- *
  */
 public class CartRemoveCmd extends SubCommand {
 	
+	/**
+	 * Command Name
+	 */
 	private static final String CART_DEL_CMD = "remove";
 	
+	/**
+	 * Command Description
+	 */
 	private static final String DESCRIPTION = "remove item from the cart";
 	
+	/**
+	 * Command parameters
+	 */
 	private static final String[] params = new String[]{"userId", "itemName", "isBought"};
 	
+	/**
+	 * Shopping Cart module
+	 */
 	IShoppingCartModule module;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param module Shopping Cart Module
+	 */
 	public CartRemoveCmd(IShoppingCartModule module) {
 		this.module = module;
 	}

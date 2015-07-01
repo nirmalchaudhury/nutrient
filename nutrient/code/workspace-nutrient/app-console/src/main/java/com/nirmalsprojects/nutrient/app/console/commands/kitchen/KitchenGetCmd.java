@@ -10,20 +10,34 @@ import com.nirmalsprojects.nutrient.types.UserItem;
 
 /**
  * Sub command to get items from the kitchen
- * 
- * @author Nirmal
- *
  */
 public class KitchenGetCmd extends SubCommand {
 	
+	/**
+	 * Command Name
+	 */
 	private static final String GET_CMD = "get";
 	
+	/**
+	 * Command Description
+	 */
 	private static final String DESCRIPTION = "get items from the kitchen";
 	
+	/**
+	 * Command parameters
+	 */
 	private static final String[] params = new String[]{"userId"};
 	
+	/**
+	 * Kitchen MOdule
+	 */
 	IKitchenModule module;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param module Kitchen Module
+	 */
 	public KitchenGetCmd(IKitchenModule module) {
 		this.module = module;
 	}

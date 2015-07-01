@@ -4,9 +4,6 @@ import java.util.List;
 
 /**
  * Interface for app console commands
- * 
- * @author Nirmal
- *
  */
 public interface ICommand {
 	

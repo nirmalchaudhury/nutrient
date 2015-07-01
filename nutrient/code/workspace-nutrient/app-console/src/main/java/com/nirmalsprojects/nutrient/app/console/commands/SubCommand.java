@@ -3,7 +3,10 @@ package com.nirmalsprojects.nutrient.app.console.commands;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Abstract subcommand implementation
 
+ */
 public abstract class SubCommand implements ISubCommand {
 	
 	/**
