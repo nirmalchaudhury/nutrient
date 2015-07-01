@@ -26,6 +26,12 @@
 	  <constructor-arg ref="kitchenDataAccess"/>
 	</bean>	
 	
+	<!-- Recipe -->
+	<bean id="recipeDataAccess" class="com.nirmalsprojects.nutrient.dataaccess.recipe.RecipeDataAccess" />
+	<bean id="recipeModule" class="com.nirmalsprojects.nutrient.module.recipe.RecipeModule">
+	  <constructor-arg ref="recipeDataAccess"/>
+	</bean>	
+	
 	<!-- Module Listeners -->
 	<bean id="cartListeners" class="com.nirmalsprojects.nutrient.modulelisteners.ShoppingCartListener" init-method="register">
 	  <constructor-arg ref="modules"/>
@@ -42,7 +48,8 @@
         <list>
         	<ref bean="helpCmd" />
             <ref bean="cartCmd" />
-            <ref bean="kitchenCmd" />                
+            <ref bean="kitchenCmd" />
+            <ref bean="recipeCmd" />                
         </list>
       </constructor-arg>
 	</bean>
@@ -52,12 +59,13 @@
       <constructor-arg>
         <list>
             <ref bean="cartCmd" />
-            <ref bean="kitchenCmd" />                
+            <ref bean="kitchenCmd" /> 
+            <ref bean="recipeCmd" />                
         </list>
       </constructor-arg>
 	</bean>	
 	
-	<!-- Cart Sub Commands -->
+	<!-- Shopping Cart Commands -->
 	<bean id="cartGetCmd" class="com.nirmalsprojects.nutrient.app.console.commands.cart.CartGetCmd">
 	  <constructor-arg ref="cartModule"/>
 	</bean>
@@ -77,7 +85,7 @@
 	  </constructor-arg>
 	</bean>
 	
-	<!-- Kitchen Sub Commands -->
+	<!-- Kitchen Commands -->
 	<bean id="kitchenGetCmd" class="com.nirmalsprojects.nutrient.app.console.commands.kitchen.KitchenGetCmd">
 	  <constructor-arg ref="kitchenModule"/>
 	</bean>
@@ -96,5 +104,20 @@
 		</list>
 	  </constructor-arg>
 	</bean>
-		
+	
+	<!-- Recipe Commands -->
+	<bean id="recipeGetCmd" class="com.nirmalsprojects.nutrient.app.console.commands.recipe.RecipeGetCmd">
+	  <constructor-arg ref="recipeModule"/>
+	</bean>
+	<bean id="recipeAddCmd" class="com.nirmalsprojects.nutrient.app.console.commands.recipe.RecipeAddCmd">
+	  <constructor-arg ref="recipeModule"/>
+	</bean>
+	<bean id="recipeCmd" class="com.nirmalsprojects.nutrient.app.console.commands.recipe.RecipeCmd">
+	  <constructor-arg>
+	    <list>
+		  <ref bean="recipeGetCmd"/>
+		  <ref bean="recipeAddCmd"/>
+		</list>
+	  </constructor-arg>
+	</bean>		
 </beans>
