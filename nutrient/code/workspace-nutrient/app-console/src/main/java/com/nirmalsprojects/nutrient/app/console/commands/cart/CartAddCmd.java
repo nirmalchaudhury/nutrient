@@ -8,20 +8,34 @@ import com.nirmalsprojects.nutrient.module.shoppingcart.IShoppingCartModule;
 
 /**
  * Command to add items to a a shopping cart
- * 
- * @author Nirmal
- *
  */
 public class CartAddCmd extends SubCommand {
 	
+	/**
+	 * Command Name
+	 */
 	private static final String CART_ADD_CMD = "add";
 	
+	/**
+	 * Command Description
+	 */
 	private static final String DESCRIPTION = "Add item to the cart";
 	
+	/**
+	 * Shopping Cart module
+	 */
 	IShoppingCartModule module;
 	
+	/**
+	 * Supported parameters
+	 */
 	private static final String[] params = new String[]{"userId", "itemName", "quantity"};
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param module Shopping cart module
+	 */
 	public CartAddCmd(IShoppingCartModule module) {
 		this.module = module;
 	}

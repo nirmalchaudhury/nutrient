@@ -1,27 +1,29 @@
 package com.nirmalsprojects.nutrient.app.console.commands.recipe;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import com.nirmalsprojects.nutrient.app.console.commands.SubCommand;
 import com.nirmalsprojects.nutrient.module.recipe.IRecipeModule;
+import com.nirmalsprojects.nutrient.module.recipe.RecipeResponse;
 
-public class RecipeGetCmd extends SubCommand {
+public class RecipeIngredientCmd extends SubCommand {
 
 	/**
 	 * get command
 	 */
-	private static final String GET_CMD = "get";
+	private static final String GET_CMD = "ingredient";
 	
 	/**
 	 * Description
 	 */
-	private static final String DESCRIPTION = "get a recipe";
+	private static final String DESCRIPTION = "get recipes with desired ingredients";
 	
 	/**
 	 * Parameters
 	 */
-	private static final String[] params = new String[]{"recipeName"};
+	private static final String[] params = new String[]{"ingredients (command seperated)"};
 	
 	/**
 	 * Recipe module
@@ -33,7 +35,7 @@ public class RecipeGetCmd extends SubCommand {
 	 * 
 	 * @param Recipe module
 	 */
-	public RecipeGetCmd(IRecipeModule module) {
+	public RecipeIngredientCmd(IRecipeModule module) {
 		this.module = module;
 	}
 
@@ -67,7 +69,9 @@ public class RecipeGetCmd extends SubCommand {
 		}
 		try {
 			int i = SUBCOMMAND_INDEX;
-			System.out.println(module.getRecipe(userInput.get(++i)));
+			String[] ingredients = userInput.get(++i).split(",");
+			ArrayList<RecipeResponse> recipes = module.getRecipes(new ArrayList<String>(Arrays.asList(ingredients)));
+			System.out.println(recipes);
 			return true;
 		} catch (Exception e) {
 			// parsing error, return false

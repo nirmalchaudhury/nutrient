@@ -10,8 +10,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.nirmalsprojects.nutrient.app.console.commands.ICommand;
 
+/**
+ * Main Console Application
+ */
 public class ConsoleApp {
 
+	/**
+	 * Application starting point
+	 * 
+	 * @param args application arguments
+	 */
 	public static void main(String[] args) {
 
 		@SuppressWarnings("resource")

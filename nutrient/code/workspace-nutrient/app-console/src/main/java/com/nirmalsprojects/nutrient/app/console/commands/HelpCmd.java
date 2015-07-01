@@ -3,14 +3,31 @@ package com.nirmalsprojects.nutrient.app.console.commands;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Help Command
+ */
 public class HelpCmd extends Command {
 	
+	/**
+	 * Command Name
+	 */
 	private static final String NAME = "-help";
 	
+	/**
+	 * Command Description
+	 */
 	private static final String DESCRIPTION = "get available commands";
 	
+	/**
+	 * Available commands
+	 */
 	private ArrayList<ICommand> availableCommands;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param cmds available commands
+	 */
 	public HelpCmd(ArrayList<ICommand> cmds) {
 		availableCommands = cmds;
 	}

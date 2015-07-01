@@ -7,16 +7,24 @@ import com.nirmalsprojects.nutrient.app.console.commands.ISubCommand;
 
 /**
  * Shopping cart command
- * 
- * @author Nirmal
- *
  */
 public class CartCmd extends Command {
 	
+	/**
+	 * Command Name
+	 */
 	public static final String CMD_NAME = "-cart";
 	
+	/**
+	 * Command Description
+	 */
 	public static final String DESCRIPTION = "Use to modify shopping cart items";
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param subCommands supported subcommands
+	 */
 	public CartCmd(ArrayList<ISubCommand> subCommands) {
 		this.subCommands = subCommands;
 	}

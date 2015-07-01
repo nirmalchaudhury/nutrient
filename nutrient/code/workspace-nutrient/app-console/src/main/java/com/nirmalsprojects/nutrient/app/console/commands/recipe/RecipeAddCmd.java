@@ -84,8 +84,8 @@ public class RecipeAddCmd extends SubCommand {
 	private Recipe createPieRecipe() {
 		IngredientGroup crustIngredients = new IngredientGroup("Crust");
 		crustIngredients.addIngredient(new Ingredient("Water",100,"ml"));
-		crustIngredients.addIngredient(new Ingredient("Almond Flour",2,"cups"));
-		crustIngredients.addIngredient(new Ingredient("Coconut Flour",0.5,"cups"));
+		crustIngredients.addIngredient(new Ingredient("AlmondFlour",2,"cups"));
+		crustIngredients.addIngredient(new Ingredient("CoconutFlour",0.5,"cups"));
 		crustIngredients.addIngredient(new Ingredient("Butter",2,"tbs"));
 		crustIngredients.addIngredient(new Ingredient("Salt",0.25,"tbls"));
 		

@@ -10,20 +10,34 @@ import com.nirmalsprojects.nutrient.types.UserItem;
 
 /**
  * Sub command to get items from a shopping cart
- * 
- * @author Nirmal
- *
  */
 public class CartGetCmd extends SubCommand {
 
+	/**
+	 * Command Name
+	 */
 	private static final String CART_GET_CMD = "get";
 	
+	/**
+	 * Command Description
+	 */
 	private static final String DESCRIPTION = "get items from the shopping cart";
 	
+	/**
+	 * Command parameters
+	 */
 	private static final String[] params = new String[]{"userId"};
 	
+	/**
+	 * Shopping Cart module
+	 */
 	private IShoppingCartModule module;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param module Shopping cart module
+	 */
 	public CartGetCmd(IShoppingCartModule module) {
 		this.module = module;
 	}

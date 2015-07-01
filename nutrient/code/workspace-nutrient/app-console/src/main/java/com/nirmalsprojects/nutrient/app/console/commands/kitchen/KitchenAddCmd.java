@@ -8,20 +8,34 @@ import com.nirmalsprojects.nutrient.module.kitchen.IKitchenModule;
 
 /**
  * Sub command to add item to the kitchen
- * 
- * @author Nirmal
- *
  */
 public class KitchenAddCmd extends SubCommand {
 	
+	/**
+	 * Command Name
+	 */
 	private static final String ADD_CMD = "add";
 	
+	/**
+	 * Command Description
+	 */
 	private static final String DESCRIPTION = "add items in the kitchen";
 	
+	/**
+	 * Command parameters
+	 */
 	private static final String[] params = new String[]{"userId", "itemName", "quantity"};
 	
+	/**
+	 * Kitchen Module
+	 */
 	IKitchenModule module;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param module Kitchen Module
+	 */
 	public KitchenAddCmd(IKitchenModule module) {
 		this.module = module;
 	}

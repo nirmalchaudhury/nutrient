@@ -8,20 +8,34 @@ import com.nirmalsprojects.nutrient.module.kitchen.IKitchenModule;
 
 /**
  * Sub command to remove items from the kitchen
- * 
- * @author Nirmal
- *
  */
 public class KitchenRemoveCmd extends SubCommand {
 	
+	/**
+	 * Command Name
+	 */
 	private static final String DEL_CMD = "remove";
 	
+	/**
+	 * Command Description
+	 */
 	private static final String DESCRIPTION = "remove item from the kitchen";
 	
+	/**
+	 * Command parameters
+	 */
 	private static final String[] params = new String[]{"userId", "itemName"};
 	
+	/**
+	 * Kitchen Module
+	 */
 	IKitchenModule module;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param module Kitchen Module
+	 */
 	public KitchenRemoveCmd(IKitchenModule module) {
 		this.module = module;
 	}

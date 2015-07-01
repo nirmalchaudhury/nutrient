@@ -50,7 +50,8 @@ public class RecipeModule implements IRecipeModule {
 		ArrayList<RecipeResponse> filteredRecipes = new ArrayList<RecipeResponse>();
 		for (Recipe r : recipeDataAccess.getRecipes()) {
 			ArrayList<Ingredient> missingIngredients = r.getMissingIngredients(availableIngredients);
-			if ((missingIngredients.size()/r.getIngredients().size()) < 0.5) {
+			double missingIngredientRatio = (double) (missingIngredients.size())/(r.getIngredients().size());
+			if (missingIngredientRatio < 0.5) {
 				filteredRecipes.add(new RecipeResponse(r,missingIngredients));
 			}
 		}

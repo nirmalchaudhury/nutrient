@@ -59,10 +59,10 @@ public class Recipe {
 	 * @param ingredients ingredients to compare against
 	 * @return list of missing ingredients
 	 */
-	public ArrayList<Ingredient> getMissingIngredients(ArrayList<String> ingredients){
+	public ArrayList<Ingredient> getMissingIngredients(ArrayList<String> ingredients){	
 		ArrayList<Ingredient> missingIngredients = new ArrayList<Ingredient>();
 		for (Ingredient i : getIngredients()) {
-			if (!ingredients.contains(i.name)) {
+			if (!i.isInList(ingredients)) {
 				missingIngredients.add(i);
 			}
 		}

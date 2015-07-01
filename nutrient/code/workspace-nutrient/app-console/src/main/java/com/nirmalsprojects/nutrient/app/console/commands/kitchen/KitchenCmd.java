@@ -7,16 +7,24 @@ import com.nirmalsprojects.nutrient.app.console.commands.ISubCommand;
 
 /**
  * Kitchen command
- * 
- * @author Nirmal
- *
  */
 public class KitchenCmd extends Command {
 	
+	/**
+	 * Command Name
+	 */
 	public static final String CMD_NAME = "-kitchen";
 	
+	/**
+	 * Command Description
+	 */
 	public static final String DESCRIPTION = "Use to modify kitchen items";
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param subCommands supported subcommands
+	 */
 	public KitchenCmd(ArrayList<ISubCommand> subCommands) {
 		this.subCommands = subCommands;
 	}

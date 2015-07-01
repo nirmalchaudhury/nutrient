@@ -3,10 +3,7 @@ package com.nirmalsprojects.nutrient.app.console.commands;
 import java.util.List;
 
 /**
- * Interface for a sub comand
- * 
- * @author Nirmal
- *
+ * Interface for a subcommand
  */
 public interface ISubCommand extends ICommand {
 	

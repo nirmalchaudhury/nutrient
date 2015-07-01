@@ -109,6 +109,9 @@
 	<bean id="recipeGetCmd" class="com.nirmalsprojects.nutrient.app.console.commands.recipe.RecipeGetCmd">
 	  <constructor-arg ref="recipeModule"/>
 	</bean>
+	<bean id="recipeIngredientCmd" class="com.nirmalsprojects.nutrient.app.console.commands.recipe.RecipeIngredientCmd">
+	  <constructor-arg ref="recipeModule"/>
+	</bean>
 	<bean id="recipeAddCmd" class="com.nirmalsprojects.nutrient.app.console.commands.recipe.RecipeAddCmd">
 	  <constructor-arg ref="recipeModule"/>
 	</bean>
@@ -116,6 +119,7 @@
 	  <constructor-arg>
 	    <list>
 		  <ref bean="recipeGetCmd"/>
+		  <ref bean="recipeIngredientCmd"/>
 		  <ref bean="recipeAddCmd"/>
 		</list>
 	  </constructor-arg>
